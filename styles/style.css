@@ -13,30 +13,65 @@
 }
 .navMenu {
     display: flex;
+    align-items: end;
     flex-direction: column;
     background-color:lightpink;
-    width: 30vw;
+    width: 25vw;
     height: 100vh;
     position:absolute;
     top:0;
     left: 0;
     transition: 0.2s linear;
     padding: 1.5vw;
-    gap:2vw;
+    gap:1vw;
     transform: translateX(-100%);
+    transition: transform 0.3s ease;
 }
 .navMenu.open {
     transform: translateX(0);
 }
 #closeBtn {
     align-self: flex-end;
+      cursor: pointer;
 }
 .navDiv {
+    width: 95%;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: black;
-    padding: 1vw;
+    padding: 0.7vw;
     border-radius: 8px;
     background-color: peachpuff;
 }
+.subMenu {
+     width: 90%;
+      transform: translateX(-100%); 
+      max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.subItem {
+    width: 100%;
+    display: flex;
+   justify-content: flex-start;
+    font-size: 1.1rem;
+    color: black;
+    padding: 0.4vw;
+    border-radius: 8px;
+    background-color: peachpuff;
+
+     transform: translateX(-20px);
+    opacity: 0;
+}
+
+
+.subMenu.open {
+    transform: translateX(0); 
+    opacity: 1;
+    max-height: 500px;
+}
+
